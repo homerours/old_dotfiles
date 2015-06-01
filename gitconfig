@@ -1,0 +1,13 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	name = homerOurs
+	email = leo-78@hotmail.fr
+
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	br = branch

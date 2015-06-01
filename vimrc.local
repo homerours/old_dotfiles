@@ -1,0 +1,74 @@
+"mon vim rc
+echo ">^.^<"
+
+set number " afficher le numero des lignes
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set wrap
+set nolist
+set nospell
+set noswapfile
+set autoindent "reproduit l'indentation de la ligne précédente
+
+set smartindent
+
+set t_Co=16
+syntax enable
+set background=dark
+let g:solarized_termcolors=16
+"let g:solarized_visibility="high"
+let g:solarized_contrast="high"
+colorscheme solarized
+" espaces pris par les numeros de ligne
+set numberwidth=2
+
+"####################################
+" Quitter le mode insertion
+inoremap jk <esc><Right>
+
+" point virgule en fin de ligne
+nnoremap <Leader>; $a;<Esc>
+
+"###################################
+" ECHANGER lignes
+noremap <leader>k yyddkP
+noremap <leader>j yyddjP
+
+"###################################
+" INDENTATION du code
+nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>
+
+"###################################
+" mapping pour manier le vimrc
+nnoremap <leader>ev :tabnew $MYVIMRC.local<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Sauver Ctrl-S
+nnoremap <leader>s :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>d :bd<cr>
+nnoremap <leader>sq :x<cr>
+
+"###################################
+" OUVRIR l'arbre de gestion
+"innoremap <leader>e :Vex<cr>
+
+" SYSTEME de TABS
+nnoremap <leader>tb :tabnew<cr>
+nnoremap <leader>p :tabn<cr>
+nnoremap <leader>o :tabp<cr>
+
+"####################################
+" abreviations
+"iabbrev me Léo Miolane
+
+"##################################"
+"Remaping de mouvements
+onoremap p i(
+onoremap c i{
+
+"###################################
+" TEMPLATES
+
+nnoremap <leader>html :0r /home/leo/.vim/templates/html_tpl.txt <cr>
