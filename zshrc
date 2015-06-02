@@ -59,7 +59,8 @@ bindkey -v
 bindkey jk vi-cmd-mode
 
 # Rendu sous tmux, forcer les 256 couleurs
-alias tmux="TERM=screen-256color /usr/bin/tmux"
+TERM=xterm-256color
+#alias tmux="TERM=screen-256color /usr/bin/tmux"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
