@@ -1,7 +1,7 @@
 "mon vim rc
 echo ">^.^<"
 
-set number " afficher le numero des lignes
+set relativenumber " afficher le numero des lignes
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -10,6 +10,7 @@ set nolist
 set nospell
 set noswapfile
 set autoindent "reproduit l'indentation de la ligne précédente
+set incsearch " recherche incrementale pour d'abord chercher puis remplacer
 
 set smartindent
 
@@ -30,6 +31,11 @@ inoremap jk <esc><Right>
 " point virgule en fin de ligne
 nnoremap <Leader>; $a;<Esc>
 
+" enlever le surlignage apres une recherche
+nnoremap <Leader>* :noh<cr>
+
+" sauver un fichier qu'on a ouvert sans sudo
+nnoremap <Leader>sus :w !sudo tee %<cr>
 "###################################
 " ECHANGER lignes
 noremap <leader>k yyddkP
@@ -66,7 +72,8 @@ nnoremap <leader>o :tabp<cr>
 "##################################"
 "Remaping de mouvements
 onoremap p i(
-onoremap c i{
+onoremap P a(
+"onoremap c i{
 
 "###################################
 " TEMPLATES
