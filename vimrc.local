@@ -11,25 +11,29 @@ set nospell
 set noswapfile
 set autoindent "reproduit l'indentation de la ligne précédente
 set incsearch " recherche incrementale pour d'abord chercher puis remplacer
-
+" /motif a chercher
+" puis :%s//turc qui remplace/g (si sans le g, ca fait seulement le premier de
+" charque ligne)
 set smartindent
+set numberwidth=2 " espaces pris par les numeros de ligne
+syntax enable " coloration syntaxique
 
+" Couleurs pour solarized
 set t_Co=16
-syntax enable
 set background=dark
 let g:solarized_termcolors=16
-"let g:solarized_visibility="high"
 let g:solarized_contrast="high"
 colorscheme solarized
-" espaces pris par les numeros de ligne
-set numberwidth=2
 
 "####################################
 " Quitter le mode insertion
-inoremap jk <esc><Right>
+inoremap jk <c-o>:stopinsert<cr>
 
 " point virgule en fin de ligne
-nnoremap <Leader>; $a;<Esc>
+nnoremap <Leader>; A;<Esc>
+
+" parenthese/crochet correspondant
+nnoremap à %
 
 " enlever le surlignage apres une recherche
 nnoremap <Leader>* :noh<cr>
@@ -43,7 +47,7 @@ noremap <leader>j yyddjP
 
 "###################################
 " INDENTATION du code
-nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>
+nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>zz
 
 "###################################
 " mapping pour manier le vimrc
@@ -57,9 +61,6 @@ nnoremap <leader>d :bd<cr>
 nnoremap <leader>sq :x<cr>
 
 "###################################
-" OUVRIR l'arbre de gestion
-"innoremap <leader>e :Vex<cr>
-
 " SYSTEME de TABS
 nnoremap <leader>tb :tabnew<cr>
 nnoremap <leader>p :tabn<cr>
@@ -73,7 +74,6 @@ nnoremap <leader>o :tabp<cr>
 "Remaping de mouvements
 onoremap p i(
 onoremap P a(
-"onoremap c i{
 
 "###################################
 " TEMPLATES

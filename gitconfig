@@ -11,3 +11,5 @@
 	co = checkout
 	st = status
 	br = branch
+[credential]
+	helper = cache
