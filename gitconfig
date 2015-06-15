@@ -7,6 +7,7 @@
     co = checkout
     st = status
     br = branch
+    pom = push origin master
 [credential]
     helper = cache
 
