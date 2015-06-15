@@ -26,8 +26,13 @@ bindkey jk vi-cmd-mode
 export TERM=xterm-256color
 
 # Alias perso
-alias ls="ls -F -h -C -g --color=auto"
-alias ll="clear ; ls -l"
+alias ls="ls --color=always"
+alias ll="clear ; ls"
+alias lz="ls -lh | awk '{print \$5, \$9}' | column -t"
+alias lza="ls -lah | awk '{print \$5, \$9}' | column -t"
+
+alias ctar="tar czvf" # c: create zip, z:gzip mode (more compression), v: verbose, show files details, f: indicate the file to compress
+alias xtar="tar xzvf" # x: extract zip
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
