@@ -28,7 +28,10 @@ export TERM=xterm-256color
 # Aliases
 source ~/.aliases
 
-# Fonctions
-run-with-sudo() { LBUFFER="sudo $LBUFFER" }
+# Functions
+source ~/.sh_func
 zle -N run-with-sudo
 bindkey '^Xs' run-with-sudo
+
+zle -N last-directory
+bindkey '^O' last-directory

@@ -13,8 +13,8 @@ set cmdhist
 export EDITOR=vim
 
 set completion-ignore-case on
-shopt -s cdspell
 shopt -s checkwinsize
+shopt -s cdspell
 
 
 # Aliases

@@ -4,5 +4,22 @@ alias ll="clear ; ls"
 alias lz="ls -lh | awk '{print \$5, \$9}' | column -t"
 alias lza="ls -lah | awk '{print \$5, \$9}' | column -t"
 
+# number of files in directory
+alias nbf="ls | wc -l"
+alias nbaf="ls -a | wc -l"
+
+# updates
+alias up='sudo apt-get update && sudo apt-get upgrade'
+
+# parent directory
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 alias ctar="tar czvf" # c: create zip, z:gzip mode (more compression), v: verbose, show files details, f: indicate the file to compress
-alias xtar="tar xzvf" # x: extract zip
+alias xtar="tar xvf" # x: extract zip
+
+# zshrc
+alias sz='source ~/.zshrc'
+alias vz='vim ~/.zshrc'
