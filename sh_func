@@ -15,3 +15,8 @@ function last-directory() {
 function mkcd() {
     mkdir $1 && cd $1
 }
+
+# Compress pdf using Ghostscript
+function pdf_compress() {
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_$1 $1
+}

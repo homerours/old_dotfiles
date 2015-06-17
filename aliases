@@ -13,6 +13,9 @@ alias up='sudo apt-get update && sudo apt-get upgrade'
 # install
 alias agi='sudo apt-get install'
 
+# Disk usage
+alias dul="du -h --max-depth=1"
+
 # parent directory
 alias ..='cd ..'
 alias ...='cd ../..'
