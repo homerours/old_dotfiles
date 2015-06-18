@@ -71,6 +71,13 @@ nnoremap <leader>o :tabp<cr>
 onoremap p i(
 onoremap P a(
 
+"##################################
+" Racourci shell
+nnoremap <leader>gs :! ~/dev/lerma/galaxyToServerBis<cr>
+nnoremap <leader>sg :! ~/dev/lerma/serverToGalaxyBis<cr>
+
+
+
 "###################################
 " TEMPLATES
 "nnoremap <leader>html :0r /home/leo/.vim/templates/html_tpl.txt <cr>
