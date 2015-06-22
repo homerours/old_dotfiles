@@ -1,4 +1,4 @@
-"mon vim rc
+" My .vimrc
 echo ">^.^<"
 
 set number " afficher le numero des lignes
@@ -18,72 +18,65 @@ set smartindent
 set numberwidth=2 " espaces pris par les numeros de ligne
 syntax enable " coloration syntaxique
 
-" Couleurs pour solarized
+" Solarized colors
 set t_Co=16
 set background=dark
 let g:solarized_termcolors=16
 let g:solarized_contrast="high"
 colorscheme solarized
 
-"####################################
-" Quitter le mode insertion
+" Exit insert mode
 inoremap jk <c-o>:stopinsert<cr>
 
-" point virgule en fin de ligne
+" ; at the end of the line
 nnoremap <Leader>; A;<Esc>
 
-" parenthese/crochet correspondant
+" Matching ( or ] ...
 nnoremap à %
 
-" last edited line (gi do the same but go in editing mode)
+" Last edited line
 nnoremap <leader>_ '.
-" last edited location (gi do the same but go in editing mode)
+" Last edited location
 nnoremap <leader>ç `.
 
-" enlever le surlignage apres une recherche
+" Remove search highlighting
 nnoremap <Leader>* :noh<cr>
 
-" sauver un fichier qu'on a ouvert sans sudo
+" Sudo write
 nnoremap <Leader>sus :w !sudo tee %<cr>
-"###################################
-" ECHANGER lignes
+
+" Swap lines
 noremap <leader>k yyddkP
 noremap <leader>j yyddjP
 
-"###################################
-" INDENTATION du code
+" Indent file
 nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>zz
 
-"###################################
-" mapping pour manier le vimrc
+" Open, source .vimrc
 nnoremap <leader>ev :tabnew $MYVIMRC.local<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Sauver Ctrl-S
+" Save
 nnoremap <leader>s :w<cr>
 nnoremap <leader>sa :wa<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>d :bd<cr>
 nnoremap <leader>sq :x<cr>
 
-"###################################
-" SYSTEME de TABS
+" Tabs
 nnoremap <leader>tb :tabnew<cr>
 nnoremap <leader>p :tabn<cr>
 nnoremap <leader>o :tabp<cr>
 
-"##################################"
-"Remaping de mouvements
+" Moves
 onoremap p i(
 onoremap P a(
 
-"##################################
-" Racourci shell
+" Shell
 nnoremap <leader>gs :! ~/dev/lerma/galaxyToServerBis<cr>
 nnoremap <leader>sg :! ~/dev/lerma/serverToGalaxyBis<cr>
 
 
 
-"###################################
 " TEMPLATES
 "nnoremap <leader>html :0r /home/leo/.vim/templates/html_tpl.txt <cr>
