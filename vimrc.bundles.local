@@ -10,3 +10,4 @@ let g:vimtex_fold_enabled=1
 let g:ctrlp_regexp = 1
 
 let g:ctrlp_abbrev = { 'gmode': 't', 'abbrevs': [ { 'pattern': ' ', 'expanded': '.*', 'mode': 'pfrz', } ] }
+ Bundle 'sheerun/vim-polyglot'

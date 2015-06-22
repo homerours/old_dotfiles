@@ -56,6 +56,9 @@ nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>zz
 nnoremap <leader>ev :tabnew $MYVIMRC.local<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Copy to system clipboard
+vmap <Leader>y "+y
+
 " Save
 nnoremap <leader>s :w<cr>
 nnoremap <leader>sa :wa<cr>
