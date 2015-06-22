@@ -63,6 +63,10 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>d :bd<cr>
 nnoremap <leader>sq :x<cr>
 
+" Folds
+nnoremap <backspace> za
+vnoremap <backspace> zf
+
 " Tabs
 nnoremap <leader>tb :tabnew<cr>
 nnoremap <leader>p :tabn<cr>
