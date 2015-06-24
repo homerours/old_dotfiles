@@ -80,8 +80,8 @@ onoremap p i(
 onoremap P a(
 
 " Shell
-nnoremap <leader>gs :! ~/dev/lerma/galaxyToServerBis<cr>
-nnoremap <leader>sg :! ~/dev/lerma/serverToGalaxyBis<cr>
+"nnoremap <leader>gs :! ~/dev/lerma/galaxyToServerBis<cr>
+"nnoremap <leader>sg :! ~/dev/lerma/serverToGalaxyBis<cr>
 
 
 
