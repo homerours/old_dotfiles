@@ -16,9 +16,12 @@ ZSH_TMUX_FIXTERM=false
 ZSH_TMUX_FIXTERM_WITH_256COLOR=false
 ZSH_TMUX_FIXTERM_WITHOUT_256COLOR=false
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/leo/android-sdk-linux/tools:/home/leo/android-sdk-linux/platform-tools"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:/home/leo/.rvm/gems/ruby-2.1.6/bin"
 
 export EDITOR='vim';
 
@@ -37,4 +40,4 @@ bindkey '^Xs' run-with-sudo
 zle -N last-directory
 bindkey '^O' last-directory
 
-source $ZSH/oh-my-zsh.sh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 

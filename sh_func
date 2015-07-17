@@ -20,3 +20,11 @@ function mkcd() {
 function pdf_compress() {
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_$1 $1
 }
+
+# Zip & Unzip file
+function ctar(){
+    tar cvzf $1.tar.gz $1;
+}
+function xtar(){
+    tar xvzf $1;
+}

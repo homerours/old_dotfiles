@@ -22,8 +22,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias ctar="tar czvf" # c: create zip, z:gzip mode (more compression), v: verbose, show files details, f: indicate the file to compress
-alias xtar="tar xvf" # x: extract zip
+#alias ctar="tar czvf" # c: create zip, z:gzip mode (more compression), v: verbose, show files details, f: indicate the file to compress
+#alias xtar="tar xvf" # x: extract zip
 
 # zshrc
 alias sz='source ~/.zshrc'
