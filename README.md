@@ -12,3 +12,6 @@
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 1. Installer les plugins VIM, dans VIM:
 `:PluginInstall`
+
+## Updates
+`git pull origin master`
