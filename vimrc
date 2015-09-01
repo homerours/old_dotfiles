@@ -21,7 +21,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+Plugin 'lervag/vimtex'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,15 +49,9 @@ syntax enable " coloration syntaxique
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Solarized colors
-"set t_Co=16
-"set background=dark
-"let g:solarized_termcolors=16
-"let g:solarized_contrast="high"
-"colorscheme solarized
-
 " Leader
 let mapleader = ' '
+let maplocalleader = 'ù'
 
 " Exit insert mode
 inoremap jk <c-o>:stopinsert<cr>
@@ -167,6 +163,8 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "NEOSNIPPET
+" Disable math-mode transform for tex
+let g:tex_conceal = ""
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
@@ -224,3 +222,7 @@ if isdirectory(expand("~/.vim/bundle/ctrlp-funky/"))
 	"funky
 	nnoremap <Leader>fu :CtrlPFunky<Cr>
 endif
+
+" VIMTEX
+let g:vimtex_enabled=1
+let g:vimtex_fold_enabled=1
