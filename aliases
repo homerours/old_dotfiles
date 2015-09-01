@@ -4,6 +4,8 @@ alias ll="clear ; ls"
 alias lz="ls -lh | awk '{print \$5, \$9}' | column -t"
 alias lza="ls -lah | awk '{print \$5, \$9}' | column -t"
 
+alias md="mkdir"
+
 # number of files in directory
 alias nbf="ls | wc -l"
 alias nbaf="ls -a | wc -l"
