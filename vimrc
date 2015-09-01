@@ -225,4 +225,4 @@ endif
 
 " VIMTEX
 let g:vimtex_enabled=1
-let g:vimtex_fold_enabled=1
+let g:vimtex_fold_enabled=0
