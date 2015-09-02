@@ -38,12 +38,16 @@ set nolist
 set nospell
 set noswapfile
 set autoindent "reproduit l'indentation de la ligne précédente
+set hlsearch " highlight search results
 set incsearch " recherche incrementale pour d'abord chercher puis remplacer
 " /motif a chercher
 " puis :%s//turc qui remplace/g (si sans le g, ca fait seulement le premier de
 " charque ligne)
 set smartindent
 set numberwidth=2 " espaces pris par les numeros de ligne
+set hidden " buffer switching without saving
+set scrolljump=5                " Lines to scroll when cursor leaves screen
+set scrolloff=3                 " Minimum lines to keep above and below cursor
 syntax enable " coloration syntaxique
 
 " Disable auto comments
@@ -87,8 +91,10 @@ nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>zz
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Yank to the end of the line
+nnoremap Y y$
 " Copy to system clipboard
-vmap <Leader>y "+y
+vnoremap <Leader>y "+y
 
 " Save
 nnoremap <leader>s :w<cr>
@@ -105,6 +111,8 @@ vnoremap <backspace> zf
 nnoremap <leader>tb :tabnew<cr>
 nnoremap <leader>p :tabn<cr>
 nnoremap <leader>o :tabp<cr>
+nnoremap <S-H> gT
+nnoremap <S-L> gt
 
 " Moves
 onoremap p i(
@@ -122,12 +130,6 @@ let g:neocomplcache_enable_smart_case = 1"
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Enable heavy features.
-" Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
