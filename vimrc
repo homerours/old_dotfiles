@@ -94,3 +94,4 @@ nnoremap <S-L> gt
 onoremap p i(
 onoremap P a(
 
+source ~/.vimrc.plugins.config
