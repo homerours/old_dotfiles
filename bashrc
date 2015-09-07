@@ -25,6 +25,9 @@ source ~/.sh_func
 # PATH
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+# DIRCOLORS
+eval `dircolors ~/.dircolors.ansi-dark`
+
 # Sexy Solarized Bash Prompt, inspired by "Extravagant Zsh Prompt"
 # Customized for the Solarized color scheme by Sean O'Neil
 

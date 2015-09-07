@@ -38,3 +38,4 @@ bindkey '^Xs' run-with-sudo
 
 zle -N last-directory
 bindkey '^O' last-directory
+eval `dircolors ~/.dircolors.ansi-dark`
