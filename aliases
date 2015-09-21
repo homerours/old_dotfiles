@@ -1,4 +1,4 @@
-# LS
+#LS
 alias ls="ls --color=always"
 alias ll="clear ; ls"
 alias lz="ls -lh | awk '{print \$5, \$9}' | column -t"
