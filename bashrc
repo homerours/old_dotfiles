@@ -1,6 +1,7 @@
 # Terminal Colors
 export CLICOLOR=1
 export TERM="xterm-256color"
+eval `dircolors ~/.dircolors.ansi-dark`
 
 # Bash History Options
 export HISTSIZE=1000000
@@ -85,7 +86,8 @@ else
 fi
 
 parse_git_dirty () {
-	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)"  ]] && echo "*"
+	#[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)"  ]] && echo "*"
+	[[ -n "$(git status --porcelain 2> /dev/null)"  ]] && echo "!"
 
 }
 parse_git_branch () {
@@ -93,4 +95,4 @@ parse_git_branch () {
 
 }
 
-PS1="\[${BOLD}${CYAN}\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null)  ]] && echo \" on \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
+PS1="\[${MAGENTA}\]\u\[$BASE0\]@\[$YELLOW\]\h\[$BASE0\]|\[$GREEN\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null)  ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
