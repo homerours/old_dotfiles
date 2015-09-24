@@ -23,7 +23,10 @@ set numberwidth=2 " espaces pris par les numeros de ligne
 set hidden " buffer switching without saving
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
+
 syntax enable " coloration syntaxique
+set background=dark
+colorscheme solarized
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

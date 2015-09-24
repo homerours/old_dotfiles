@@ -1,3 +1,6 @@
+# VIM
+alias svim="sudoedit"
+
 #LS
 alias ls="ls --color=always"
 alias ll="clear ; ls"

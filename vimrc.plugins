@@ -22,6 +22,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/syntastic'
 Plugin 'lervag/vimtex'
 Plugin 'godlygeek/tabular'
+Plugin 'altercation/vim-colors-solarized'
 "Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line

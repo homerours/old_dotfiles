@@ -14,5 +14,5 @@
 `:PluginInstall`
 
 ## Updates
-`git pull origin master`
-`git submodule update --recursive`
+- `git pull origin master`
+- `git submodule update --recursive`

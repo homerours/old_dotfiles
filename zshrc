@@ -14,6 +14,7 @@ fi
 # Customize to your needs...
 
 export EDITOR='vim'
+export SUDO_EDITOR='vim'
 export GIT_EDITOR=vim
 
 # VIM MODE
@@ -39,3 +40,5 @@ bindkey '^Xs' run-with-sudo
 zle -N last-directory
 bindkey '^O' last-directory
 eval `dircolors ~/.dircolors.ansi-dark`
+#eval `dircolors ~/.dircolors.256dark`
+#eval `dircolors ~/.dircolors.ansi-universal`
