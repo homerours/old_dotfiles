@@ -87,7 +87,7 @@ fi
 
 parse_git_dirty () {
 	#[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)"  ]] && echo "*"
-	[[ -n "$(git status --porcelain 2> /dev/null)"  ]] && echo "!"
+	[[ -n "$(git status --porcelain 2> /dev/null)"  ]] && echo "${YELLOW}!"
 
 }
 parse_git_branch () {
