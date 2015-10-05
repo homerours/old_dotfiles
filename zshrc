@@ -1,9 +1,3 @@
-
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
 
 # Source Prezto.

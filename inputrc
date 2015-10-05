@@ -12,3 +12,6 @@ $if mode=vi
     "jk": vi-movement-mode 
 
 $endif
+
+# case-insensitive
+set completion-ignore-case On
