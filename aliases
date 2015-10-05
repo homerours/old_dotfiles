@@ -2,7 +2,7 @@
 alias svim="sudoedit"
 
 #LS
-alias ls="ls --color=always"
+alias ls="ls -hF --color=always"
 alias ll="clear ; ls"
 alias lz="ls -lh | awk '{print \$5, \$9}' | column -t"
 alias lza="ls -lah | awk '{print \$5, \$9}' | column -t"
