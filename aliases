@@ -3,7 +3,13 @@ alias svim="sudoedit"
 
 #LS
 alias ls="ls -hF --color=always"
-alias ll="clear ; ls"
+alias lx='ls -lXB'              # sort by extension
+alias lk='ls -lSr'              # sort by size
+alias lc='ls -lcr'              # sort by change time
+alias lu='ls -lur'              # sort by access time
+alias lr='ls -lR'               # recursive ls
+alias lt='ls -ltr'              # sort by date
+
 alias lz="ls -lh | awk '{print \$5, \$9}' | column -t"
 alias lza="ls -lah | awk '{print \$5, \$9}' | column -t"
 
@@ -15,6 +21,8 @@ alias nbaf="ls -a | wc -l"
 
 # updates
 alias up='sudo apt-get update && sudo apt-get upgrade'
+alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y && sudo apt-get clean"
+
 # install
 alias agi='sudo apt-get install'
 

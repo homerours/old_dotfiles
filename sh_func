@@ -1,4 +1,4 @@
-# Fonctions
+# Functions
 
 # Prepend sudo to a command
 function run-with-sudo() {
@@ -6,14 +6,21 @@ function run-with-sudo() {
 }
 
 # Back
-function last-directory() {
-    builtin cd $OLDPWD
-    zle reset-prompt
-}
+#function last-directory() {
+    #builtin cd $OLDPWD
+    #zle reset-prompt
+#}
 
 # Create directory and move into
 function mkcd() {
     mkdir $1 && cd $1
+}
+
+# move to ~/.Trash instead of rm a file
+function del() {
+	for i in $* ; do
+		mv $i ~/.local/share/Trash/files/
+	done
 }
 
 # Compress pdf using Ghostscript
@@ -22,9 +29,19 @@ function pdf_compress() {
 }
 
 # Zip & Unzip file
-function ctar(){
+function ctar() {
     tar cvzf $1.tar.gz $1;
 }
-function xtar(){
+function xtar() {
     tar xvzf $1;
+}
+
+# get the current IP adresses on eth0
+function myip() {
+	MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2  } ' | sed -e s/adr:// | sed -e s/inet6://)
+	if [ -z "$MY_IP" ]
+	then
+		MY_IP=$(/sbin/ifconfig wlan0 | awk '/inet/ { print $2  } ' | sed -e s/adr:// | sed -e s/inet6://)
+	fi
+	echo $MY_IP
 }

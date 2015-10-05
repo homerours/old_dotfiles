@@ -18,7 +18,9 @@ bindkey jk vi-cmd-mode
 # PATH
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-ANDROID_SDK_PATH="/home/leo/android-sdk-linux"
+
+# Android SDK
+ANDROID_SDK_PATH=$HOME"/android-sdk-linux"
 export PATH=$PATH:$ANDROID_SDK_PATH/tools
 export PATH=$PATH:$ANDROID_SDK_PATH/build-tools
 export PATH=$PATH:$ANDROID_SDK_PATH/platform-tools
@@ -31,8 +33,6 @@ source ~/.sh_func
 zle -N run-with-sudo
 bindkey '^Xs' run-with-sudo
 
-zle -N last-directory
-bindkey '^O' last-directory
 eval `dircolors ~/.dircolors.ansi-dark`
 #eval `dircolors ~/.dircolors.256dark`
 #eval `dircolors ~/.dircolors.ansi-universal`

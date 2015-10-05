@@ -14,7 +14,6 @@ set cmdhist
 export EDITOR=vim
 export SUDO_EDITOR=vim
 
-set completion-ignore-case on
 shopt -s checkwinsize
 shopt -s cdspell
 
