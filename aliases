@@ -41,3 +41,6 @@ alias .....='cd ../../../..'
 # zshrc
 alias sz='source ~/.zshrc'
 alias vz='vim ~/.zshrc'
+
+# yolo
+alias yolo='cat /dev/urandom | hexdump -C | grep "ca fe"'
