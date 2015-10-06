@@ -13,7 +13,6 @@ set nolist
 set nospell
 set noswapfile
 set autoindent "reproduit l'indentation de la ligne précédente
-set smartindent
 set hlsearch " highlight search results
 set incsearch " recherche incrementale pour d'abord chercher puis remplacer
 " /motif a chercher
@@ -27,6 +26,10 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 syntax enable " coloration syntaxique
 set background=dark
 colorscheme solarized
+
+" open file at the same line that it was closed for the last time
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -97,4 +100,17 @@ nnoremap <S-L> gt
 onoremap p i(
 onoremap P a(
 
+" Bash and Nodejs file detection
+fun! s:DetectShebang()
+	if getline(1) == '#!/bin/bash'
+		set ft=sh
+	endif
+	if getline(1) == '#!/usr/bin/env node'
+		set ft=javascript
+	endif
+endfun
+
+autocmd BufNewFile,BufRead * call s:DetectShebang()
+
+" Load plugin config
 source ~/.vimrc.plugins.config

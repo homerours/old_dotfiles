@@ -1,43 +1,51 @@
+#!/bin/bash
 # Functions
 
 # Prepend sudo to a command
-function run-with-sudo() {
-    LBUFFER="sudo $LBUFFER"
+function run-with-sudo()
+{
+	LBUFFER="sudo $LBUFFER"
 }
 
 # Back
 #function last-directory() {
-    #builtin cd $OLDPWD
-    #zle reset-prompt
+#builtin cd $OLDPWD
+#zle reset-prompt
 #}
 
 # Create directory and move into
-function mkcd() {
-    mkdir $1 && cd $1
+function mcd()
+{
+	mkdir $1 && cd $1
 }
 
 # move to ~/.Trash instead of rm a file
-function del() {
+function del()
+{
 	for i in $* ; do
 		mv $i ~/.local/share/Trash/files/
 	done
 }
 
 # Compress pdf using Ghostscript
-function pdf_compress() {
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_$1 $1
+function pdf_compress()
+{
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_$1 $1
 }
 
 # Zip & Unzip file
-function ctar() {
-    tar cvzf $1.tar.gz $1;
+function ctar()
+{
+	tar cvzf $1.tar.gz $1;
 }
-function xtar() {
-    tar xvzf $1;
+function xtar()
+{
+	tar xvzf $1;
 }
 
 # get the current IP adresses on eth0
-function myip() {
+function myip()
+{
 	MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2  } ' | sed -e s/adr:// | sed -e s/inet6://)
 	if [ -z "$MY_IP" ]
 	then
@@ -47,16 +55,17 @@ function myip() {
 }
 
 # INFOS
-myinfos () {
+function myinfos ()
+{
 	printf "CPU: "
-		cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i  }'
-		printf "\n"
-		cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4  }'
-		uname -a | awk '{ printf "Kernel: %s " , $3  }'
-		uname -m | awk '{ printf "%s | " , $1  }'
-		#kded4 --version | grep "KDE Development Platform" | awk '{ printf "KDE: %s", $4  }'
-		printf "\n"
-		uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5  }' | sed 's/,//g'
-		printf "\n"
-#cputemp | awk '{ printf "%s %s", $1 $2  }'
+	cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i  }'
+	printf "\n"
+	cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4  }'
+	uname -a | awk '{ printf "Kernel: %s " , $3  }'
+	uname -m | awk '{ printf "%s | " , $1  }'
+	#kded4 --version | grep "KDE Development Platform" | awk '{ printf "KDE: %s", $4  }'
+	printf "\n"
+	uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5  }' | sed 's/,//g'
+	printf "\n"
+	#cputemp | awk '{ printf "%s %s", $1 $2  }'
 }
