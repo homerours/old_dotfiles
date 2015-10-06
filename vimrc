@@ -66,7 +66,7 @@ noremap <leader>k yyddkP
 noremap <leader>j yyddjP
 
 " Indent file
-nnoremap <Leader>f :normal gg=G<cr><c-o><c-o>zz
+nnoremap <Leader>f :normal gg=G''<cr>zz
 
 " Open, source .vimrc
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
