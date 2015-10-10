@@ -1,5 +1,4 @@
 " My .vimrc
-"echo ">^.^<"
 
 " PLUGINS
 source ~/.vimrc.plugins
@@ -59,7 +58,7 @@ nnoremap <leader>ç `.
 nnoremap <Leader>* :noh<cr>
 
 " Sudo write
-nnoremap <Leader>sus :w !sudo tee %<cr>
+nnoremap <Leader>W :w !sudo tee %<cr>
 
 " Swap lines
 noremap <leader>k yyddkP
