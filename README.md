@@ -4,15 +4,14 @@
 1. Cloner le repertoire:
 `git clone --recursive https://github.com/homerours/dotfiles`
 
-1. Créer les liens symlinks (synchro.sh)
-1. Créer les liens pour prezto
+1. Créer les symlinks: `./install_dotfiles.sh` (installer Vundle pour VIM)
 
 ## VIM
-1. Installer Vundle pour VIM: 
-`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-1. Installer les plugins VIM, dans VIM:
+Installer les plugins VIM (installer Vundle au préalable): 
 `:PluginInstall`
 
 ## Updates
-- `git pull origin master`
-- `git submodule update --recursive`
+`./update_dotfiles.sh`
+OU:
+`git pull origin master`
+`git submodule update --recursive`
