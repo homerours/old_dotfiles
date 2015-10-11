@@ -1,28 +1,39 @@
+
+"   | | | (_)
+"   | | | |_ _ __ ___  _ __ ___
+"   | | | | | '_ ` _ \| '__/ __|
+"   \ \_/ / | | | | | | | | (__
+"    \___/|_|_| |_| |_|_|  \___|)
+
 " My .vimrc
 
 " PLUGINS
 source ~/.vimrc.plugins
 
-set number " afficher le numero des lignes
-set tabstop=4
+set number        " afficher le numero des lignes
+set tabstop=4     " number of visual spaces per tab
+set softtabstop=4 " number of spaces per tab
 set shiftwidth=4
-set softtabstop=4
-set wrap
+set wrap          " wrap lines
+set linebreak     " wrap long lines at a blank
 set nolist
-set nospell
-set noswapfile
-set autoindent "reproduit l'indentation de la ligne précédente
-set hlsearch " highlight search results
-set incsearch " recherche incrementale pour d'abord chercher puis remplacer
-" /motif a chercher
-" puis :%s//turc qui remplace/g (si sans le g, ca fait seulement le premier de
-" charque ligne)
+set cursorline    " highlight current line
+set nospell       " disable spell checking
+set noswapfile    " no swap files are created
+set lazyredraw    " only redraw when needed
+set autoindent    " reproduit l'indentation de la ligne précédente
+set hlsearch      " highlight search results
+set incsearch     " cherche pendant qu'on tape
 set numberwidth=2 " espaces pris par les numeros de ligne
-set hidden " buffer switching without saving
-set scrolljump=5                " Lines to scroll when cursor leaves screen
-set scrolloff=3                 " Minimum lines to keep above and below cursor
+set hidden        " buffer switching without saving
+set scrolljump=5  " Lines to scroll when cursor leaves screen
+set scrolloff=3   " Minimum lines to keep above and below cursor
+syntax enable     " coloration syntaxique
 
-syntax enable " coloration syntaxique
+" avoid highlighting last search when sourcing vimrc
+let @/ = ""
+
+" Colorscheme
 set background=dark
 colorscheme solarized
 
@@ -32,6 +43,9 @@ autocmd BufWinEnter ?* silent loadview
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" filetype-specific indentation
+filetype indent on
 
 " Leaders
 let mapleader = ' '
@@ -44,7 +58,7 @@ noremap j gj
 noremap k gk
 
 " ; at the end of the line
-nnoremap <Leader>; A;<Esc>
+nnoremap <leader>; A;<Esc>
 
 " Matching ( or ] ...
 nnoremap à %
@@ -54,18 +68,17 @@ nnoremap <leader>_ '.
 " Last edited location
 nnoremap <leader>ç `.
 
+" highlight last inserted text
+nnoremap gV `[v`]
+
 " Remove search highlighting
-nnoremap <Leader>* :noh<cr>
+nnoremap <leader>* :noh<cr>
 
 " Sudo write
-nnoremap <Leader>W :w !sudo tee %<cr>
-
-" Swap lines
-noremap <leader>k yyddkP
-noremap <leader>j yyddjP
+nnoremap <leader>W :w !sudo tee %<cr>
 
 " Indent file
-nnoremap <Leader>f :normal gg=G''<cr>zz
+nnoremap <leader>f :normal gg=G''<cr>zz
 
 " Open, source .vimrc
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
@@ -75,7 +88,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap Y y$
 
 " Copy to system clipboard
-vnoremap <Leader>y "+y
+vnoremap <leader>y "+y
 
 " Save
 nnoremap <leader>s :w<cr>
