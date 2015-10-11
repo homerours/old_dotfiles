@@ -27,8 +27,8 @@ set background=dark
 colorscheme solarized
 
 " open file at the same line that it was closed for the last time
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+autocmd BufWinLeave ?* mkview
+autocmd BufWinEnter ?* silent loadview
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
