@@ -1,8 +1,10 @@
 #!/bin/bash
+
 # VIM
 alias svim="sudoedit"
 
 #LS
+alias sl='ls'
 alias ls="ls -hF --color=always"
 alias la='ls -lah'              # list all
 alias lx='ls -lXB'              # sort by extension
@@ -24,6 +26,10 @@ alias nbaf="ls -a | wc -l"
 # updates
 alias up='sudo apt-get update && sudo apt-get upgrade'
 alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y && sudo apt-get clean"
+
+# show installed packages
+alias listpackages='dpkg --get-selections'
+alias showinstalled='listpackages | grep -v deinstall | grep '
 
 # install
 alias agi='sudo apt-get install'

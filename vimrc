@@ -1,4 +1,3 @@
-
 "   | | | (_)
 "   | | | |_ _ __ ___  _ __ ___
 "   | | | | | '_ ` _ \| '__/ __|
@@ -17,17 +16,17 @@ set shiftwidth=4
 set wrap          " wrap lines
 set linebreak     " wrap long lines at a blank
 set nolist
-set cursorline    " highlight current line
 set nospell       " disable spell checking
 set noswapfile    " no swap files are created
 set lazyredraw    " only redraw when needed
 set autoindent    " reproduit l'indentation de la ligne précédente
 set hlsearch      " highlight search results
 set incsearch     " cherche pendant qu'on tape
-set numberwidth=2 " espaces pris par les numeros de ligne
+set numberwidth=1 " espaces pris par les numeros de ligne
 set hidden        " buffer switching without saving
 set scrolljump=5  " Lines to scroll when cursor leaves screen
 set scrolloff=3   " Minimum lines to keep above and below cursor
+set cursorline    " highlight current line
 syntax enable     " coloration syntaxique
 
 " avoid highlighting last search when sourcing vimrc
@@ -37,15 +36,40 @@ let @/ = ""
 set background=dark
 colorscheme solarized
 
-" open file at the same line that it was closed for the last time
-autocmd BufWinLeave ?* mkview
-autocmd BufWinEnter ?* silent loadview
+if has('statusline')
+	" red
+	hi User1 ctermbg=black ctermfg=160 guibg=black guifg=#dc322f
+	" cyan
+	hi User2 ctermbg=black ctermfg=37 guibg=black guifg=#2aa198
+	" cyan
+	hi User3 ctermbg=black ctermfg=136 guibg=black guifg=#b58900
+	" base1
+	hi User4 ctermbg=black ctermfg=245 guibg=black guifg=#93a1a1
+
+	set laststatus=2
+	set statusline=%3*
+	set statusline+=%<%f\                     " Filename
+	set statusline+=%1*
+	set statusline+=%w%h%m%r                 " Options
+	set statusline+=%2*
+	set statusline+=%{fugitive#statusline()} " Git
+	set statusline+=%4*
+	set statusline+=\ [%{&ff}/%Y]            " Filetype
+	set statusline+=\ [%{getcwd()}]          " Current dir
+	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
+
+
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " filetype-specific indentation
 filetype indent on
+
+" open file at the same line that it was closed for the last time
+autocmd BufWinLeave ?* mkview
+autocmd BufWinEnter ?* silent loadview
 
 " Leaders
 let mapleader = ' '
@@ -123,6 +147,7 @@ fun! s:DetectShebang()
 endfun
 
 autocmd BufNewFile,BufRead * call s:DetectShebang()
+
 
 " Load plugin config
 source ~/.vimrc.plugins.config
