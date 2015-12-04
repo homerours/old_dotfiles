@@ -6,6 +6,7 @@ alias svim="sudoedit"
 #LS
 alias sl='ls'
 alias ls="ls -hF --color=always"
+alias lh='ls -lh'
 alias la='ls -lah'              # list all
 alias lx='ls -lXB'              # sort by extension
 alias lk='ls -lSr'              # sort by size

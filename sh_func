@@ -74,3 +74,9 @@ function myinfos ()
 function encode() { echo -n $@ | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'; }
 function google() { sensible-browser http://www.google.com/search\?hl\=en\#q\="`encode $@`" ; }
 function wiki() { sensible-browser http://fr.wikipedia.org/w/index.php\?search\="`encode $@`" ; }
+
+# Show group users
+function members ()
+{
+	grep $1 /etc/group
+}
