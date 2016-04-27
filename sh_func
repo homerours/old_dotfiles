@@ -33,6 +33,13 @@ function pdf_compress()
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_$1 $1
 }
 
+# Format pdf 2 pages per sheet and remove margins
+function pdf_sbs()
+{
+	pdfcrop --margins 1 $1 crop_$1;
+	pdfnup --outfile sbs_$1 crop_$1 ;
+}
+
 # Zip & Unzip file
 function ctar()
 {
