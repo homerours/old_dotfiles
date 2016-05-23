@@ -35,6 +35,10 @@ alias showinstalled='listpackages | grep -v deinstall | grep '
 # install
 alias agi='sudo apt-get install'
 
+# arch
+alias pacS='sudo pacman -S'
+alias pacSyu='sudo pacman -Syu'
+
 # Disk usage
 alias dul="du -h --max-depth=1"
 
