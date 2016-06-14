@@ -87,3 +87,7 @@ function members ()
 {
 	grep $1 /etc/group
 }
+
+function gimp_auto() {
+	gimp -i -b '(batch-auto-levels "*.JPG")' -b '(gimp-quit 0)'
+}
