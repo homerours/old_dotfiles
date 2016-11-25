@@ -20,6 +20,9 @@ alias lza="ls -lah | awk '{print \$5, \$9}' | column -t"
 
 alias md="mkdir"
 
+# OPEN
+alias open='xdg-open'
+
 # number of files in directory
 alias nbf="ls | wc -l"
 alias nbaf="ls -a | wc -l"
@@ -37,6 +40,7 @@ alias agi='sudo apt-get install'
 
 # arch
 alias pacS='sudo pacman -S'
+alias pacR='sudo pacman -Rscn'
 alias pacSyu='sudo pacman -Syu'
 
 # Disk usage

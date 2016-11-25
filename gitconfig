@@ -8,6 +8,7 @@
     st = status
     br = branch
     pom = push origin master
+    pum = pull origin master
 
 [credential]
     helper = cache

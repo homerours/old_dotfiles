@@ -148,6 +148,23 @@ endfun
 
 autocmd BufNewFile,BufRead * call s:DetectShebang()
 
+" Markdown
+fun! Pandoc()
+	:silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.pdf<CR>
+endfun
+
+fun! PandocLatex()
+	:silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.tex<CR>
+endfun
+
+fun! ViewPdf()
+	:silent Start! xdg-open %:r.pdf<CR>
+endfun
+
+"nnoremap <localleader>ml :w<CR>:call Pandoc()<CR>
+"nnoremap <localleader>mt :w<CR>:call PandocLatex()<CR>
+"nnoremap <localleader>mv :call ViewPdf()<CR>
+
 
 " Load plugin config
 source ~/.vimrc.plugins.config

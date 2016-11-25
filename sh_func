@@ -36,7 +36,7 @@ function pdf_compress()
 # Format pdf 2 pages per sheet and remove margins
 function pdf_sbs()
 {
-	pdfcrop --margins 1 $1 crop_$1;
+	pdfcrop --margins 20 $1 crop_$1;
 	pdfnup --outfile sbs_$1 crop_$1 ;
 }
 
@@ -90,4 +90,12 @@ function members ()
 
 function gimp_auto() {
 	gimp -i -b '(batch-auto-levels "*.JPG")' -b '(gimp-quit 0)'
+}
+
+function mount_usb() {
+	sudo mount -o rw,uid="$UID" /dev/sdc1 /home/leo/bounty
+}
+
+function umount_usb() {
+	sudo umount /dev/sdc1
 }
