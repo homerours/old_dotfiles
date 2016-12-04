@@ -132,6 +132,11 @@ nnoremap <leader>o :tabp<cr>
 nnoremap <S-H> gT
 nnoremap <S-L> gt
 
+" Word spell
+nnoremap <leader>tc :set spell spelllang=en_us<cr>
+nnoremap <leader>tn :set nospell<cr>
+nnoremap <leader>t ]s
+
 " Moves
 onoremap p i(
 onoremap P a(

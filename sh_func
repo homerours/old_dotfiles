@@ -79,8 +79,8 @@ function myinfos ()
 
 # Google from command line
 function encode() { echo -n $@ | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'; }
-function google() { sensible-browser http://www.google.com/search\?hl\=en\#q\="`encode $@`" ; }
-function wiki() { sensible-browser http://fr.wikipedia.org/w/index.php\?search\="`encode $@`" ; }
+function google() { xdg-open http://www.google.com/search\?hl\=en\#q\="`encode $@`" ; }
+function wiki() { xdg-open http://fr.wikipedia.org/w/index.php\?search\="`encode $@`" ; }
 
 # Show group users
 function members ()
