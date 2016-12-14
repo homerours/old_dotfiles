@@ -7,12 +7,6 @@ function run-with-sudo()
 	LBUFFER="sudo $LBUFFER"
 }
 
-# Back
-#function last-directory() {
-#builtin cd $OLDPWD
-#zle reset-prompt
-#}
-
 # Create directory and move into
 function mcd()
 {
@@ -36,8 +30,9 @@ function pdf_compress()
 # Format pdf 2 pages per sheet and remove margins
 function pdf_sbs()
 {
-	pdfcrop --margins 20 $1 crop_$1;
+	pdfcrop --margins 1 $1 crop_$1;
 	pdfnup --outfile sbs_$1 crop_$1 ;
+	rm crop_$1;
 }
 
 # Zip & Unzip file
@@ -79,8 +74,8 @@ function myinfos ()
 
 # Google from command line
 function encode() { echo -n $@ | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'; }
-function google() { sensible-browser http://www.google.com/search\?hl\=en\#q\="`encode $@`" ; }
-function wiki() { sensible-browser http://fr.wikipedia.org/w/index.php\?search\="`encode $@`" ; }
+function google() { xdg-open http://www.google.com/search\?hl\=en\#q\="`encode $@`" ; }
+function wiki() { xdg-open http://fr.wikipedia.org/w/index.php\?search\="`encode $@`" ; }
 
 # Show group users
 function members ()
@@ -98,4 +93,16 @@ function mount_usb() {
 
 function umount_usb() {
 	sudo umount /dev/sdc1
+}
+
+function tex_tpl() {
+	git clone https://github.com/homerours/latex_style.git;
+	if [ $# -eq 0 ]; then
+		cp latex_style/example.tex ./;
+	else
+		cp latex_style/example.tex ./$1.tex;
+	fi
+	cp latex_style/gitignore ./.gitignore;
+	rm -rf latex_style/.git;
+	rm latex_style/README.md latex_style/example.tex latex_style/gitignore;
 }

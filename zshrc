@@ -22,10 +22,10 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # Android SDK
 #ANDROID_SDK_PATH=$HOME"/android-sdk-linux"
-ANDROID_SDK_PATH="/opt/android-sdk"
-export PATH=$PATH:$ANDROID_SDK_PATH/tools
-export PATH=$PATH:$ANDROID_SDK_PATH/build-tools
-export PATH=$PATH:$ANDROID_SDK_PATH/platform-tools
+#ANDROID_SDK_PATH="/opt/android-sdk"
+#export PATH=$PATH:$ANDROID_SDK_PATH/tools
+#export PATH=$PATH:$ANDROID_SDK_PATH/build-tools
+#export PATH=$PATH:$ANDROID_SDK_PATH/platform-tools
 
 # Aliases
 source ~/.aliases
