@@ -62,3 +62,6 @@ alias vz='vim ~/.zshrc'
 
 # yolo
 alias yolo='cat /dev/urandom | hexdump -C | grep "ca fe"'
+
+# arxiv
+alias arxiv='~/Documents/dev/arxiv/search-arxiv/arxiv.py'
