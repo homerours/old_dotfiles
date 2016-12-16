@@ -9,3 +9,33 @@
 `git remote add <shortname> <url>`
 - Push/pull
 `git push <shortname> master` and `git pull <shortname> master`
+
+- Apply .gitignore rules
+1. Commit all pending changes, then run this command:
+`git rm -r --cached .`
+1. This removes everything from the index, then just run:
+`git add .`
+1. Commit it:
+`git commit -m ".gitignore is now working"`
+
+
+## Usb formating
+- format fat32 (code fdisk:b)
+`mkfs -t vfat /dev/sdc1 `
+- rename key
+`sudo mlabel -i /dev/sdc1 -s ::"nom"`
+
+## PDF
+- cut pdf pages
+`pdftk full-pdf.pdf cat 12-15 output outfile.pdf`
+
+
+## Archives
+- zip
+`zip archive.zip [file list]`
+`zip -r archive.zip [dir]`
+`zip -r archive.zip *`
+
+- unzip
+`unzip archive.zip - d directory`
+
