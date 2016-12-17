@@ -1,5 +1,7 @@
 # dotfiles
 
+Tips [here](notes.md)
+
 ## Installation
 1. Cloner le repertoire:
 `git clone --recursive https://github.com/homerours/dotfiles`

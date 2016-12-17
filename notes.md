@@ -21,7 +21,7 @@
 
 ## Usb formating
 - format fat32 (code fdisk:b)
-```
+```sh
 mkfs -t vfat /dev/sdc1 
 ```
 - rename key
@@ -34,11 +34,13 @@ mkfs -t vfat /dev/sdc1
 
 ## Archives
 - zip
-`zip archive.zip [file list]`
-`zip -r archive.zip [dir]`
-`zip -r archive.zip *`
+```sh
+zip archive.zip [file list]
+zip -r archive.zip [dir]
+zip -r archive.zip *
+```
 
-- unzip
+- unzip: 
 `unzip archive.zip - d directory`
 
 ## Backup
@@ -51,17 +53,16 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 
 ## VIM
 
-* # -> search for word under cursor, forward, backwards
-'.  -> to the last editded line
-gi  -> go to last edited location, in insert mode
-C   -> change the rest of the line
-s   -> == xi
+- _NEW_
+	* `*`, `#` -> search for word under cursor, forward, backwards
+	* `'.`  -> to the last editded line
+	* `gi`  -> go to last edited location, in insert mode
 
 - Visual mode:
-o   -> go to the other end of the area
-O   -> in block selection, go to the oposite corner
+	* `o`   -> go to the other end of the area
+	* `O`   -> in block selection, go to the oposite corner
 
 - Regex & Cie
-:g/pattern/d -> delete lines with pattern
-:g/^$/d      -> delete empty lines
-c at the end -> ask for confirmation
+	* `:g/pattern/d` -> delete lines with pattern
+	* `:g/^$/d`      -> delete empty lines
+	* `c` at the end -> ask for confirmation
