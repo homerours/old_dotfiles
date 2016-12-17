@@ -57,6 +57,7 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 	* `*`, `#` -> search for word under cursor, forward, backwards
 	* `'.`  -> to the last editded line
 	* `gi`  -> go to last edited location, in insert mode
+	* `g;`, `g,` or `<CTRL>-I`, `<CTRL>-O` -> go forward, backwards in the last edition locations
 
 - Visual mode:
 	* `o`   -> go to the other end of the area
