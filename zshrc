@@ -32,6 +32,7 @@ source ~/.aliases
 
 # Functions
 source ~/.sh_func
+source ~/dotfiles/android.sh
 zle -N run-with-sudo
 bindkey '^Xs' run-with-sudo
 
