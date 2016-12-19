@@ -13,6 +13,6 @@ function ssh_android() {
 function cp_android() {
 	local phone_ip=`get_ip_frop_mac $mac_adress`
 	local dir=$1
-	local backup_dir=$phone_ip:/sdcard/$2
+	local backup_dir=$phone_ip:/sdcard/DOCS/$2
 	rsync -avz -e "ssh -p 2222" --size-only --no-times --no-perms --stats --delete --progress --cvs-exclude $dir $backup_dir
 }
