@@ -28,10 +28,11 @@ function pdf_compress()
 }
 
 # Format pdf 2 pages per sheet and remove margins
+# left, top, right and bottom margins
 function pdf_sbs()
 {
-	pdfcrop --margins 1 $1 crop_$1;
-	pdfnup --outfile sbs_$1 crop_$1 ;
+	pdfcrop --margins '8 8 8 8' $1 crop_$1;
+	pdfnup --scale 1 --outfile sbs_$1 crop_$1;
 	rm crop_$1;
 }
 
