@@ -67,3 +67,7 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 	* `:g/pattern/d` -> delete lines with pattern
 	* `:g/^$/d`      -> delete empty lines
 	* `c` at the end -> ask for confirmation
+
+## Pdf
+- `pdftk <input-file> <operator> output <file>`
+- `pdftk <input-file> output <file> <operator>`

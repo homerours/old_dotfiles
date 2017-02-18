@@ -31,8 +31,8 @@ function pdf_compress()
 # left, top, right and bottom margins
 function pdf_sbs()
 {
-	pdfcrop --margins '8 8 8 8' $1 crop_$1;
-	pdfnup --scale 1 --outfile sbs_$1 crop_$1;
+	pdfcrop --margins '5 0 0 0' $1 crop_$1;
+	pdfnup --scale 1.00 --delta "-0cm 0cm 0cm 0cm" --outfile sbs_$1 crop_$1;
 	rm crop_$1;
 }
 
