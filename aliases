@@ -6,6 +6,7 @@ alias svim="sudoedit"
 #LS
 alias sl='ls'
 alias l='ls'
+alias t='tree'
 alias ls="ls -hF --color=always"
 alias ll='ls -lh'
 alias la='ls -lah'              # list all
