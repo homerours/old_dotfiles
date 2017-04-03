@@ -71,3 +71,4 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 ## Pdf
 - `pdftk <input-file> <operator> output <file>`
 - `pdftk <input-file> output <file> <operator>`
+- `pdftk in.pdf cat 1-endwest output out.pdf` (rotate 90 trigo)
