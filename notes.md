@@ -58,6 +58,10 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 	* `'.`  -> to the last editded line
 	* `gi`  -> go to last edited location, in insert mode
 	* `g;`, `g,` or `<CTRL>-I`, `<CTRL>-O` -> go forward, backwards in the last edition locations
+	* `:set spell spelllang=fr` -> french spellcheck
+	* `>>` or `<<` -> indent
+	* `gv` -> reselct previous visual selection
+
 
 - Visual mode:
 	* `o`   -> go to the other end of the area
@@ -72,3 +76,4 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 - `pdftk <input-file> <operator> output <file>`
 - `pdftk <input-file> output <file> <operator>`
 - `pdftk in.pdf cat 1-endwest output out.pdf` (rotate 90 trigo)
+- `pdftk in.pdf cat 1-10 12-end output out.pdf` (remove page 11)
