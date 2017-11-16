@@ -32,7 +32,7 @@ function pdf_compress()
 function pdf_sbs()
 {
 	pdfcrop --margins '0 0 0 0' $1 crop_$1;
-	pdfnup --scale 1.00 --delta "0cm -0cm 0cm 0cm" --outfile sbs_$1 crop_$1;
+	pdfnup --scale 1.00 --delta "-0.3cm 0cm -0cm 0cm" --outfile sbs_$1 crop_$1;
 	rm crop_$1;
 }
 

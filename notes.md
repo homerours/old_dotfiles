@@ -30,7 +30,8 @@ mkfs -t vfat /dev/sdc1
 ## PDF
 - cut pdf pages
 `pdftk full-pdf.pdf cat 12-15 output outfile.pdf`
-
+- rotate entire document
+`pdftk in.pdf cat 1-endwest output out.pdf`
 
 ## Archives
 - zip
@@ -61,6 +62,7 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 	* `:set spell spelllang=fr` -> french spellcheck
 	* `>>` or `<<` -> indent
 	* `gv` -> reselct previous visual selection
+	* Replace in visual selection. Press :  and then enter s/foo/bar/g
 
 
 - Visual mode:

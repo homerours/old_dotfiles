@@ -171,7 +171,7 @@ endfun
 "nnoremap <localleader>mv :call ViewPdf()<CR>
 
 " disable completion for python
-autocmd FileType python NeoCompleteLock
+"autocmd FileType python NeoCompleteLock
 
 " Load plugin config
 source ~/.vimrc.plugins.config

@@ -19,6 +19,8 @@ bindkey jk vi-cmd-mode
 # PATH
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+# NVM
+#source /usr/share/nvm/init-nvm.sh
 
 # Android SDK
 #ANDROID_SDK_PATH=$HOME"/android-sdk-linux"
