@@ -166,6 +166,7 @@ fun! ViewPdf()
 	:silent Start! xdg-open %:r.pdf<CR>
 endfun
 
+"inoremap <tab> <ctrl>-p
 "nnoremap <localleader>ml :w<CR>:call Pandoc()<CR>
 "nnoremap <localleader>mt :w<CR>:call PandocLatex()<CR>
 "nnoremap <localleader>mv :call ViewPdf()<CR>

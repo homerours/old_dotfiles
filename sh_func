@@ -32,7 +32,7 @@ function pdf_compress()
 function pdf_sbs()
 {
 	pdfcrop --margins '0 0 0 0' $1 crop_$1;
-	pdfnup --scale 1.00 --delta "-0.3cm 0cm -0cm 0cm" --outfile sbs_$1 crop_$1;
+	pdfnup --scale 1.00 --delta "-0.0cm 0cm -0cm 0cm" --outfile sbs_$1 crop_$1;
 	rm crop_$1;
 }
 
@@ -106,4 +106,13 @@ function tex_tpl() {
 	cp latex_style/gitignore ./.gitignore;
 	rm -rf latex_style/.git;
 	rm latex_style/README.md latex_style/example.tex latex_style/gitignore;
+}
+
+function todrive() {
+	if [ $# -ne 0 ]; then
+		cp $1 ~/Documents/work/maths/BIBLIOTHEQUE/Misc/;
+		cd ~/Documents/work/maths/BIBLIOTHEQUE;
+		grive;
+		cd -;
+	fi
 }

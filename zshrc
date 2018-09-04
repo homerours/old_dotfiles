@@ -76,5 +76,5 @@ _gen_fzf_default_opts() {
 	#"
 }
 _gen_fzf_default_opts
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
