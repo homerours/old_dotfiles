@@ -171,6 +171,8 @@ endfun
 "nnoremap <localleader>mt :w<CR>:call PandocLatex()<CR>
 "nnoremap <localleader>mv :call ViewPdf()<CR>
 
+hi clear SpellBad
+hi SpellBad cterm=underline
 " disable completion for python
 "autocmd FileType python NeoCompleteLock
 
