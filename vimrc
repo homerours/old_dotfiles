@@ -29,6 +29,8 @@ set scrolloff=3   " Minimum lines to keep above and below cursor
 set cursorline    " highlight current line
 syntax enable     " coloration syntaxique
 
+" Neovim cursor
+set guicursor=
 " avoid highlighting last search when sourcing vimrc
 let @/ = ""
 
@@ -69,7 +71,7 @@ filetype indent on
 
 " open file at the same line that it was closed for the last time
 autocmd BufWinLeave ?* mkview
-autocmd BufWinEnter ?* silent loadview
+autocmd BufWinEnter ?* silent! loadview
 
 " Leaders
 let mapleader = ' '
@@ -142,29 +144,29 @@ onoremap p i(
 onoremap P a(
 
 " Bash and Nodejs file detection
-fun! s:DetectShebang()
-	if getline(1) == '#!/bin/bash'
-		set ft=sh
-	endif
-	if getline(1) == '#!/usr/bin/env node'
-		set ft=javascript
-	endif
-endfun
+"fun! s:DetectShebang()
+	"if getline(1) == '#!/bin/bash'
+		"set ft=sh
+	"endif
+	"if getline(1) == '#!/usr/bin/env node'
+		"set ft=javascript
+	"endif
+"endfun
 
-autocmd BufNewFile,BufRead * call s:DetectShebang()
+"autocmd BufNewFile,BufRead * call s:DetectShebang()
 
 " Markdown
-fun! Pandoc()
-	:silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.pdf<CR>
-endfun
+"fun! Pandoc()
+	":silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.pdf<CR>
+"endfun
 
-fun! PandocLatex()
-	:silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.tex<CR>
-endfun
+"fun! PandocLatex()
+	":silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.tex<CR>
+"endfun
 
-fun! ViewPdf()
-	:silent Start! xdg-open %:r.pdf<CR>
-endfun
+"fun! ViewPdf()
+	":silent Start! xdg-open %:r.pdf<CR>
+"endfun
 
 "inoremap <tab> <ctrl>-p
 "nnoremap <localleader>ml :w<CR>:call Pandoc()<CR>

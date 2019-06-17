@@ -6,7 +6,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 	source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
 
 export EDITOR='vim'
 export SUDO_EDITOR='vim'
