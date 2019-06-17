@@ -48,11 +48,11 @@ select yn in "Yes" "No"; do
 done
 
 # Install Vundle
-echo -e "Would you like to install ${GREEN}Vundle${NORMAL}? (Git required)"
+echo -e "Would you like to install ${GREEN}vim-plug${NORMAL}?"
 select yn in "Yes" "No"; do
 	case $yn in
-		Yes) git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim; echo -e "${GREEN}Done !${NORMAL}\n"; break;;
-		No) echo -e "Vundle will not be installed\n"; break;;
+		Yes) curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		No) echo -e "vim-plug will not be installed\n"; break;;
 	esac
 done
 

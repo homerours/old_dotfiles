@@ -15,6 +15,8 @@ export GIT_EDITOR=vim
 bindkey -v
 bindkey jk vi-cmd-mode 
 
+bindkey '^[[Z' reverse-menu-complete
+
 # PATH
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 

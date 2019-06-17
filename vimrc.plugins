@@ -1,34 +1,39 @@
 " PLUGINS
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugins go here
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'lervag/vimtex'
+Plug 'godlygeek/tabular'
+Plug 'altercation/vim-colors-solarized'
 
-"Plugin 'tpope/vim-dispatch'
+" Completion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+call plug#end()
+
+
 " GIT
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'lervag/vimtex'
-Plugin 'Shougo/neocomplete.vim'
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'Shougo/neocomplete.vim'
 "Plugin 'Shougo/neosnippet'
 "Plugin 'Shougo/neosnippet-snippets'
 "Plugin 'scrooloose/syntastic'
-"Plugin 'godlygeek/tabular'
-Plugin 'altercation/vim-colors-solarized'
 "Plugin 'plasticboy/vim-markdown'
 
 " WEB
@@ -38,8 +43,4 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Python
 "Plugin 'klen/python-mode'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+let g:deoplete#enable_at_startup = 1
