@@ -1,5 +1,4 @@
 " PLUGINS
-
 call plug#begin('~/.vim/plugged')
 
 " Plugins go here
@@ -14,6 +13,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
 Plug 'godlygeek/tabular'
 Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/syntastic'
 
 " Completion
 if has('nvim')
@@ -24,6 +24,9 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
 call plug#end()
 
 
@@ -33,7 +36,6 @@ call plug#end()
 "Plugin 'Shougo/neocomplete.vim'
 "Plugin 'Shougo/neosnippet'
 "Plugin 'Shougo/neosnippet-snippets'
-"Plugin 'scrooloose/syntastic'
 "Plugin 'plasticboy/vim-markdown'
 
 " WEB
@@ -43,4 +45,3 @@ call plug#end()
 
 " Python
 "Plugin 'klen/python-mode'
-let g:deoplete#enable_at_startup = 1
