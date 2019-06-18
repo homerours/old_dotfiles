@@ -1,5 +1,5 @@
 #export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
-#export TERM=xterm-256color
+export TERM=xterm-256color
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
