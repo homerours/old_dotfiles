@@ -1,5 +1,5 @@
 #export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -15,7 +15,7 @@ export GIT_EDITOR=vim
 bindkey -v
 bindkey jk vi-cmd-mode 
 
-bindkey '^[[Z' reverse-menu-complete
+bindkey '\e[Z' reverse-menu-complete
 
 # PATH
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
