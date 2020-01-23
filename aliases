@@ -74,3 +74,6 @@ alias arxiv='~/Documents/dev/arxiv/search-arxiv/arxiv.py'
 
 # scan nmap
 alias ip_scan='nmap -sP 192.168.1.0/24'
+
+# Redshift
+alias red='redshift -P -O 4000'

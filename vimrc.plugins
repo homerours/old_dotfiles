@@ -13,15 +13,20 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
 Plug 'godlygeek/tabular'
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/syntastic'
+
+" html css
+Plug 'mattn/emmet-vim'
+"Plug 'scrooloose/syntastic'
+let g:deoplete#sources#jedi#python_path = 'python3'
 
 " Completion
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+  let g:deoplete#sources#jedi#python_path = 'python3'
+"else
+  "Plug 'Shougo/deoplete.nvim'
+  "Plug 'roxma/nvim-yarp'
+  "Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 Plug 'Shougo/neosnippet.vim'

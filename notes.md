@@ -79,3 +79,7 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 - `pdftk <input-file> output <file> <operator>`
 - `pdftk in.pdf cat 1-endwest output out.pdf` (rotate 90 trigo)
 - `pdftk in.pdf cat 1-10 12-end output out.pdf` (remove page 11)
+
+## Redshift
+Tempetature entre 1000 et 25000
+`redshift -P -O 2000`
