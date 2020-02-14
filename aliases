@@ -49,6 +49,8 @@ alias agi='sudo apt-get install'
 alias pacS='sudo pacman -S'
 alias pacR='sudo pacman -Rscn'
 alias pacSyu='sudo pacman -Syu'
+alias clean_cache='sudo pacman -Scc'
+alias remove_orphans='sudo pacman -Rns $(pacman -Qtdq)'
 
 # Disk usage
 alias dul="du -h --max-depth=1"
