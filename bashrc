@@ -76,8 +76,10 @@ if tput setaf 1 &> /dev/null; then
 else
 	# Linux console colors. I don't have the energy
 	# to figure out the Solarized values
+	BASE0="\033[0;34m"
 	MAGENTA="\033[1;31m"
-	ORANGE="\033[1;33m"
+	ORANGE="\033[0;31m"
+	YELLOW="\033[1;33m"
 	GREEN="\033[1;32m"
 	PURPLE="\033[1;35m"
 	WHITE="\033[1;37m"
