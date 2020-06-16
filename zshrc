@@ -2,16 +2,15 @@
 source ~/dotfiles/shellrc.sh
 
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-	source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+#if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+	#source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+#fi
 
 # VIM MODE
 bindkey -v
 bindkey jk vi-cmd-mode 
 
 bindkey '\e[Z' reverse-menu-complete
-
 
 zle -N run-with-sudo
 bindkey '^Xs' run-with-sudo
