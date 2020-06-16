@@ -76,29 +76,11 @@ fi
 parse_git_dirty () {
 	#[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)"  ]] && echo "*"
 	[[ -n "$(git status --porcelain 2> /dev/null)"  ]] && echo "${YELLOW}!"
-
 }
 parse_git_branch () {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-
 }
 
 PS1="\[${MAGENTA}\]\u\[$BASE0\]@\[$YELLOW\]\h\[$BASE0\]|\[$GREEN\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null)  ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
-
- #Aliases
-#source ~/.aliases
-
- #functions
-#source ~/.sh_func
-
- #PATH
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
- #DIRCOLORS
-#eval `dircolors ~/.dircolors.ansi-dark`
-
-#export TERM="xterm-256color"
-
-#. ~/z.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
