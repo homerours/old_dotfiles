@@ -7,7 +7,7 @@
 " My .vimrc
 
 " PLUGINS
-source ~/.vimrc.plugins
+source ~/dotfiles/vimrc.plugins
 
 set number        " afficher le numero des lignes
 set tabstop=4     " number of visual spaces per tab
@@ -180,4 +180,4 @@ hi SpellBad cterm=underline
 "autocmd FileType python NeoCompleteLock
 
 " Load plugin config
-source ~/.vimrc.plugins.config
+source ~/dotfiles/vimrc.plugins.config

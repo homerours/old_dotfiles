@@ -20,10 +20,10 @@ if [ -d "$HOME/Documents/dev/lineage/platform-tools" ] ; then
 fi
 
 # Aliases
-source ~/.aliases
+source ~/dotfiles/aliases
 
 # Functions
-source ~/.sh_func
+source ~/dotfiles/sh_func
 # issue with bash
 #source ~/dotfiles/android.sh
 
