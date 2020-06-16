@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function dotfiles_installer(){
-	for option in "$@"
+	for var in "$@"
 	do
 		install_this "$var"
 	done
