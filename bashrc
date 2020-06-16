@@ -1,8 +1,8 @@
 #!/bin/bash
+source ~/dotfiles/shellrc.sh
 # Terminal Colors
 export CLICOLOR=1
-export TERM="xterm-256color"
-eval `dircolors ~/.dircolors.ansi-dark`
+
 
 # Bash History Options
 export HISTSIZE=1000000
@@ -12,23 +12,9 @@ export HISTTIMEFORMAT='%b %d %H:%M:%S: '
 shopt -s histappend
 set cmdhist
 
-export EDITOR=vim
-export SUDO_EDITOR=vim
-
 shopt -s checkwinsize
 shopt -s cdspell
 
-# Aliases
-source ~/.aliases
-
-# functions
-source ~/.sh_func
-
-# PATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
-# DIRCOLORS
-eval `dircolors ~/.dircolors.ansi-dark`
 
 # Sexy Solarized Bash Prompt, inspired by "Extravagant Zsh Prompt"
 # Customized for the Solarized color scheme by Sean O'Neil
@@ -99,5 +85,20 @@ parse_git_branch () {
 
 PS1="\[${MAGENTA}\]\u\[$BASE0\]@\[$YELLOW\]\h\[$BASE0\]|\[$GREEN\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null)  ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
 
+ #Aliases
+#source ~/.aliases
+
+ #functions
+#source ~/.sh_func
+
+ #PATH
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+ #DIRCOLORS
+#eval `dircolors ~/.dircolors.ansi-dark`
+
+#export TERM="xterm-256color"
+
+#. ~/z.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
