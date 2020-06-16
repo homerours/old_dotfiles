@@ -32,6 +32,9 @@ endif
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
+" Python
+Plug 'klen/python-mode'
+
 call plug#end()
 
 
@@ -48,5 +51,3 @@ call plug#end()
 "Plugin 'othree/javascript-libraries-syntax.vim'
 "Plugin 'pangloss/vim-javascript'
 
-" Python
-"Plugin 'klen/python-mode'

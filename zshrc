@@ -29,6 +29,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 #export PATH=$PATH:$ANDROID_SDK_PATH/tools
 #export PATH=$PATH:$ANDROID_SDK_PATH/build-tools
 #export PATH=$PATH:$ANDROID_SDK_PATH/platform-tools
+if [ -d "$HOME/Documents/dev/lineage/platform-tools" ] ; then
+	export PATH="$HOME/Documents/dev/lineage/platform-tools:$PATH"
+fi
 
 # Aliases
 source ~/.aliases

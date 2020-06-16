@@ -47,11 +47,11 @@ select yn in "Yes" "No"; do
 	esac
 done
 
-# Install Vundle
+# Install Vim-Plug
 echo -e "Would you like to install ${GREEN}vim-plug${NORMAL}?"
 select yn in "Yes" "No"; do
 	case $yn in
-		Yes) curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		Yes) curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; break;;
 		No) echo -e "vim-plug will not be installed\n"; break;;
 	esac
 done
