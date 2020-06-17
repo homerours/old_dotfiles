@@ -1,6 +1,20 @@
 #!/bin/bash
 
-function dotfiles_installer(){
+MAGENTA="\033[1;31m"
+ORANGE="\033[1;33m"
+GREEN="\033[1;32m"
+NORMAL="\\033[0;39m"
+PURPLE="\033[1;35m"
+
+echo -e "\n${PURPLE}-------------------------------------${NORMAL}" 
+echo -e "|${MAGENTA}   Installing HOMEROURS dotfiles${NORMAL}   |"
+echo -e "${PURPLE}-------------------------------------${NORMAL}\n" 
+
+echo '$ source ./install.sh'
+echo '$ dotinstall symlink prezto nvim-plug vim-plug fzf'
+echo ''
+
+function dotinstall(){
 	for var in "$@"
 	do
 		install_this "$var"

@@ -3,7 +3,7 @@
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 cd ~/dotfiles
-git submodule update --init prezo
+git submodule update --init prezto
 
 mv ~/.zprezto $olddir
 ln -s ~/dotfiles/prezto ~/.zprezto
