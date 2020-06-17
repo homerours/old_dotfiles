@@ -35,15 +35,15 @@ alias nbf="ls | wc -l"
 alias nbaf="ls -a | wc -l"
 
 # updates
-alias up='sudo apt-get update && sudo apt-get upgrade'
-alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y && sudo apt-get clean"
+#alias up='sudo apt-get update && sudo apt-get upgrade'
+#alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y && sudo apt-get clean"
 
 # show installed packages
 alias listpackages='dpkg --get-selections'
 alias showinstalled='listpackages | grep -v deinstall | grep '
 
 # install
-alias agi='sudo apt-get install'
+#alias agi='sudo apt-get install'
 
 # arch
 alias pacS='sudo pacman -S'
@@ -60,9 +60,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-#alias ctar="tar czvf" # c: create zip, z:gzip mode (more compression), v: verbose, show files details, f: indicate the file to compress
-#alias xtar="tar xvf" # x: extract zip
 
 # zshrc
 alias sz='source ~/.zshrc'
