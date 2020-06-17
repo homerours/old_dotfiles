@@ -14,6 +14,7 @@ echo '$ source ./install.sh'
 echo '$ dotinstall symlink prezto nvim-plug vim-plug fzf'
 echo ''
 
+
 function dotinstall(){
 	for var in "$@"
 	do

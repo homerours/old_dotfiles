@@ -11,3 +11,8 @@ Tips [here](notes.md)
 ## VIM
 Install Vim plugins (install vim-plug using install.sh before): 
 `:PlugInstall`
+
+## Deoplete
+Deoplete (completion for neovim) requires python3 support. Run
+`pip install neovim`
+`:UpdateRemotePlugins`
