@@ -19,4 +19,10 @@ bindkey '^Xs' run-with-sudo
 #$"
 
 # Fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]
+then
+	zle     -N   fzf-file-widget
+	bindkey '^P' fzf-file-widget
+	_gen_fzf_default_opts # config contained in shellrc
+	source ~/.fzf.zsh
+fi

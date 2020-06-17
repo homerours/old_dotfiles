@@ -83,4 +83,12 @@ parse_git_branch () {
 
 PS1="\[${MAGENTA}\]\u\[$BASE0\]@\[$YELLOW\]\h\[$BASE0\]|\[$GREEN\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null)  ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# FZF fuzzy finder
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -f ~/.fzf.bash ]
+then
+	source ~/.fzf.bash
+	_gen_fzf_default_opts # config contained in shellrc
+	bind -x '"\C-p": "fzf-file-widget"'
+fi
+

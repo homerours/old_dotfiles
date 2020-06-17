@@ -27,8 +27,6 @@ source ~/dotfiles/sh_func
 # issue with bash
 #source ~/dotfiles/android.sh
 
-#export FZF_DEFAULT_OPTS='--color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254
-#--color info:254,prompt:37,spinner:108,pointer:235,marker:235'
 _gen_fzf_default_opts() {
 	local base03="234"
 	local base02="235"
@@ -58,7 +56,5 @@ _gen_fzf_default_opts() {
 	#  --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
 	#"
 }
-_gen_fzf_default_opts
-
 # include Z
 . ~/dotfiles/z.sh
