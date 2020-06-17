@@ -3,17 +3,11 @@
 Tips [here](notes.md)
 
 ## Installation
-1. Cloner le repertoire:
-`git clone --recursive https://github.com/homerours/dotfiles`
+1. Clone
+`git clone https://github.com/homerours/dotfiles`
 
-1. Créer les symlinks: `./install_dotfiles.sh` (installer Vundle pour VIM)
+1. Symlink + install additional stuff `source ./install.sh`
 
 ## VIM
-Installer les plugins VIM (installer Vundle au préalable): 
-`:PluginInstall`
-
-## Updates
-`./update_dotfiles.sh`
-OU:
-`git pull origin master`
-`git submodule update --recursive`
+Install Vim plugins (install vim-plug using install.sh before): 
+`:PlugInstall`
