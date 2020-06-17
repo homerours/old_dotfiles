@@ -42,7 +42,7 @@ function install_this() {
 	elif [[ $1 == "prezto" ]]
 	then
 		echo "Installing Prezto!"
-		$dir/install_prezto.sh
+		$dir/iprezto.sh
 	elif [[ $1 == "nvim-plug" ]]
 	then
 		echo "Installing Plug for NEOVIM!"
