@@ -83,6 +83,3 @@ rsync -av --stats --delete --progress --cvs-exclude $dir $backup_dir
 ## Redshift
 Temperature entre 1000 et 25000
 `redshift -P -O 2000`
-
-## Grive
-grive -a --id 367176448090-9qimf9unf69v4dtnef9o1sl7g9ehofhb.apps.googleusercontent.com --secret G698wqhW6ThwmkhWAv8mxXjL
