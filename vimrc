@@ -115,8 +115,8 @@ nnoremap <S-L> gt
 nnoremap <leader>tc :set spell spelllang=en_us<cr>
 nnoremap <leader>tn :set nospell<cr>
 nnoremap <leader>t ]s
-"hi clear SpellBad
-"hi SpellBad cterm=underline
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 " Moves
 onoremap p i(
