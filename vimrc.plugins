@@ -1,53 +1,45 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 
-" Plugins go here
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'lervag/vimtex'
-Plug 'godlygeek/tabular'
+" COLORS
 Plug 'altercation/vim-colors-solarized'
 
-" html css
-Plug 'mattn/emmet-vim'
-"Plug 'scrooloose/syntastic'
-let g:deoplete#sources#jedi#python_path = 'python3'
+" NAVIGATE
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
 
-" Completion
+" PAIRS, INDENT
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular'
+
+" COMMENT
+Plug 'scrooloose/nerdcommenter'
+
+" COMPLETION
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#sources#jedi#python_path = 'python3'
-"else
-  "Plug 'Shougo/deoplete.nvim'
-  "Plug 'roxma/nvim-yarp'
-  "Plug 'roxma/vim-hug-neovim-rpc'
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	let g:deoplete#sources#jedi#python_path = 'python3'
+else
+	Plug 'maralla/completor.vim'
 endif
 
+" SNIPPETS
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+
+" GIT
+"Plug 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter' " see git diff +/-
+"Plug 'Xuyuanp/nerdtree-git-plugin' " see git diff in nerdtree
+
+
+"============= LANGUAGE SPECIFIC ==============
+
+" LATEX
+Plug 'lervag/vimtex'
 
 " Python
 Plug 'klen/python-mode'
 
 call plug#end()
-
-
-" GIT
-
-"Plugin 'Shougo/deoplete.nvim'
-"Plugin 'Shougo/neocomplete.vim'
-"Plugin 'Shougo/neosnippet'
-"Plugin 'Shougo/neosnippet-snippets'
-"Plugin 'plasticboy/vim-markdown'
-
-" WEB
-"Plugin 'othree/html5.vim'
-"Plugin 'othree/javascript-libraries-syntax.vim'
-"Plugin 'pangloss/vim-javascript'
-

@@ -31,6 +31,7 @@ syntax enable     " coloration syntaxique
 
 " Neovim cursor
 set guicursor=
+
 " avoid highlighting last search when sourcing vimrc
 let @/ = ""
 
@@ -38,31 +39,6 @@ let @/ = ""
 set t_Co=256
 set background=dark
 colorscheme solarized
-
-if has('statusline')
-	" red
-	hi User1 ctermbg=black ctermfg=160 guibg=black guifg=#dc322f
-	" cyan
-	hi User2 ctermbg=black ctermfg=37 guibg=black guifg=#2aa198
-	" cyan
-	hi User3 ctermbg=black ctermfg=136 guibg=black guifg=#b58900
-	" base1
-	hi User4 ctermbg=black ctermfg=245 guibg=black guifg=#93a1a1
-
-	set laststatus=2
-	set statusline=%3*
-	set statusline+=%<%f\                     " Filename
-	set statusline+=%1*
-	set statusline+=%w%h%m%r                 " Options
-	set statusline+=%2*
-	set statusline+=%{fugitive#statusline()} " Git
-	set statusline+=%4*
-	set statusline+=\ [%{&ff}/%Y]            " Filetype
-	set statusline+=\ [%{getcwd()}]          " Current dir
-	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-
-
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -139,45 +115,35 @@ nnoremap <S-L> gt
 nnoremap <leader>tc :set spell spelllang=en_us<cr>
 nnoremap <leader>tn :set nospell<cr>
 nnoremap <leader>t ]s
+"hi clear SpellBad
+"hi SpellBad cterm=underline
 
 " Moves
 onoremap p i(
 onoremap P a(
 
-" Bash and Nodejs file detection
-"fun! s:DetectShebang()
-	"if getline(1) == '#!/bin/bash'
-		"set ft=sh
-	"endif
-	"if getline(1) == '#!/usr/bin/env node'
-		"set ft=javascript
-	"endif
-"endfun
+if has('statusline')
+	" red
+	hi User1 ctermbg=black ctermfg=160 guibg=black guifg=#dc322f
+	" cyan
+	hi User2 ctermbg=black ctermfg=37 guibg=black guifg=#2aa198
+	" cyan
+	hi User3 ctermbg=black ctermfg=136 guibg=black guifg=#b58900
+	" base1
+	hi User4 ctermbg=black ctermfg=245 guibg=black guifg=#93a1a1
 
-"autocmd BufNewFile,BufRead * call s:DetectShebang()
-
-" Markdown
-"fun! Pandoc()
-	":silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.pdf<CR>
-"endfun
-
-"fun! PandocLatex()
-	":silent Start! pandoc --number-sections --smart --normalize --template=template.latex % -o %:r.tex<CR>
-"endfun
-
-"fun! ViewPdf()
-	":silent Start! xdg-open %:r.pdf<CR>
-"endfun
-
-"inoremap <tab> <ctrl>-p
-"nnoremap <localleader>ml :w<CR>:call Pandoc()<CR>
-"nnoremap <localleader>mt :w<CR>:call PandocLatex()<CR>
-"nnoremap <localleader>mv :call ViewPdf()<CR>
-
-hi clear SpellBad
-hi SpellBad cterm=underline
-" disable completion for python
-"autocmd FileType python NeoCompleteLock
+	set laststatus=2
+	set statusline=%3*
+	set statusline+=%<%f\                     " Filename
+	set statusline+=%1*
+	set statusline+=%w%h%m%r                 " Options
+	set statusline+=%2*
+	"set statusline+=%{fugitive#statusline()} " Git
+	set statusline+=%4*
+	set statusline+=\ [%{&ff}/%Y]            " Filetype
+	set statusline+=\ [%{getcwd()}]          " Current dir
+	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
 
 " Load plugin config
 source ~/dotfiles/vimrc.plugins.config
