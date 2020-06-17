@@ -21,7 +21,8 @@ function install_this() {
 			echo "Creating symlink to $file in home directory."
 			ln -s $dir/$file ~/.$file
 		done
-		echo leo
+		mv ~/.config/nvim/init.vim $olddir &> /dev/null
+		ln -s $dir/init.vim ~/.config/nvim/init.vim
 	elif [[ $1 == "prezto" ]]
 	then
 		echo "Installing Prezto!"
