@@ -23,6 +23,7 @@ function install_this() {
 		echo leo
 	elif [[ $1 == "prezto" ]]
 	then
+		echo "Installing Prezto!"
 		$dir/install_prezto.sh
 	elif [[ $1 == "plug-nvim" ]]
 	then

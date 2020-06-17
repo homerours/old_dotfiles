@@ -61,4 +61,4 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 
 # include Z
-. ~/z.sh
+. ~/dotfiles/z.sh
