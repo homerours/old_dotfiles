@@ -36,7 +36,8 @@ function install_this() {
 			ln -s $dir/$file ~/.$file
 		done
 		mv ~/.config/nvim/init.vim $olddir &> /dev/null
-		ln -s $dir/init.vim ~/.config/nvim/init.vim
+		mkdir -p ~/.config/nvim
+		ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 	elif [[ $1 == "prezto" ]]
 	then
 		echo "Installing Prezto!"
