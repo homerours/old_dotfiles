@@ -29,6 +29,7 @@ set scrolloff=3   " Minimum lines to keep above and below cursor
 set cursorline    " highlight current line
 syntax enable     " coloration syntaxique
 
+set conceallevel=0 " json quotes
 " Neovim cursor
 set guicursor=
 
@@ -37,113 +38,113 @@ let @/ = ""
 
 " Colorscheme
 set t_Co=256
-set background=dark
-colorscheme solarized
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"set background=dark
+"let g:solarized_termcolors = 256 
+"colorscheme solarized
+" Or if you have Neovim >= 0.1.5
+set termguicolors
+colorscheme OceanicNext
 
-" Disable auto comments
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" disable auto comments
+autocmd filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " filetype-specific indentation
 filetype indent on
 
 " open file at the same line that it was closed for the last time
-autocmd BufWinLeave ?* mkview
-autocmd BufWinEnter ?* silent! loadview
+autocmd bufwinleave ?* mkview
+autocmd bufwinenter ?* silent! loadview
 
-" Leaders
+" leaders
 let mapleader = ' '
-let maplocalleader = 'ù'
+let maplocalleader = "'"
 
-" Exit insert mode
+" exit insert mode
 inoremap jk <c-o>:stopinsert<cr>
 
 noremap j gj
 noremap k gk
 
 " ; at the end of the line
-nnoremap <leader>; A;<Esc>
+nnoremap <leader>; a;<esc>
 
-" Matching ( or ] ...
+" matching ( or ] ...
 nnoremap à %
 
-" Last edited line
+" last edited line
 nnoremap <leader>_ '.
-" Last edited location
+" last edited location
 nnoremap <leader>ç `.
 
 " highlight last inserted text
-nnoremap gV `[v`]
+nnoremap gv `[v`]
 
-" Remove search highlighting
+" remove search highlighting
 nnoremap <leader>* :noh<cr>
 
-" Sudo write
-nnoremap <leader>W :w !sudo tee %<cr>
+" sudo write
+"nnoremap <leader>w :w !sudo tee %<cr>
 
-" Indent file
-nnoremap <leader>f :normal gg=G''<cr>zz
+" indent file
+"nnoremap <leader>f :normal gg=g''<cr>zz
 
-" Open, source .vimrc
-nnoremap <leader>ev :tabnew $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" open, source .vimrc
+nnoremap <leader>ev :tabnew $myvimrc<cr>
+nnoremap <leader>sv :source $myvimrc<cr>
 
-" Yank to the end of the line
+" yank to the end of the line
 nnoremap Y y$
+nnoremap cz cw
 
-" Copy to system clipboard
+" copy to system clipboard
 vnoremap <leader>y "+y
 
-" Save
-nnoremap <leader>s :w<cr>
-nnoremap <leader>sa :wa<cr>
+" save
+nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <leader>d :bd<cr>
-nnoremap <leader>sq :x<cr>
 
-" Folds
+" folds
 nnoremap <backspace> za
 vnoremap <backspace> zf
 
-" Tabs
+" tabs
 nnoremap <leader>tb :tabnew<cr>
 nnoremap <leader>p :tabn<cr>
 nnoremap <leader>o :tabp<cr>
-nnoremap <S-H> gT
-nnoremap <S-L> gt
+nnoremap <s-h> gt
+nnoremap <s-l> gt
 
-" Word spell
+" word spell
 nnoremap <leader>tc :set spell spelllang=en_us<cr>
 nnoremap <leader>tn :set nospell<cr>
 nnoremap <leader>t ]s
-hi clear SpellBad
-hi SpellBad cterm=underline
+hi clear spellbad
+hi spellbad cterm=underline
 
-" Moves
+" moves
 onoremap p i(
-onoremap P a(
+onoremap p a(
 
 if has('statusline')
-	" red
-	hi User1 ctermbg=black ctermfg=160 guibg=black guifg=#dc322f
 	" cyan
-	hi User2 ctermbg=black ctermfg=37 guibg=black guifg=#2aa198
-	" cyan
-	hi User3 ctermbg=black ctermfg=136 guibg=black guifg=#b58900
+	hi user3 ctermbg=black ctermfg=237 guibg=#343d46 guifg=#EC5f67
 	" base1
-	hi User4 ctermbg=black ctermfg=245 guibg=black guifg=#93a1a1
+	hi user4 ctermbg=black ctermfg=235 guibg=#1b2b34 guifg=#99c794
 
 	set laststatus=2
 	set statusline=%3*
-	set statusline+=%<%f\                     " Filename
+	set statusline+=%<%f                     " filename
 	set statusline+=%1*
-	set statusline+=%w%h%m%r                 " Options
+	set statusline+=\ %w%h%m%r                 " options
 	set statusline+=%2*
-	"set statusline+=%{fugitive#statusline()} " Git
+	"set statusline+=%{fugitive#statusline()} " git
 	set statusline+=%4*
-	set statusline+=\ [%{&ff}/%Y]            " Filetype
-	set statusline+=\ [%{getcwd()}]          " Current dir
-	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+	set statusline+=\ (%{&ff}/%y)            " filetype
+	set statusline+=\ %{getcwd()}          " current dir
+	set statusline+=%=%-14.(%l,%c%v%)\ %p%%  " right aligned file nav info
 endif
 
-" Load plugin config
+" load plugin config
+
 source ~/dotfiles/vimrc.plugins.config

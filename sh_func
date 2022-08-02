@@ -47,14 +47,20 @@ function xtar()
 	tar xvzf $1;
 }
 
+function find_bounty()
+{
+	MY_IP=`ipconfig getifaddr en0`
+	BASE=`echo $MY_IP | cut -d"." -f1-3`
+	#echo $BASE
+	echo $BASE
+	BOUNTY=`nmap -sn $BASE.0/24 | awk '/bounty/ {print substr($6,2,length($6)-2)}'`
+	echo $BOUNTY
+}
+
 # get the current IP adresses on eth0
 function myip()
 {
-	MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2  } ' | sed -e s/adr:// | sed -e s/inet6://)
-	if [ -z "$MY_IP" ]
-	then
-		MY_IP=$(/sbin/ifconfig wlan0 | awk '/inet/ { print $2  } ' | sed -e s/adr:// | sed -e s/inet6://)
-	fi
+	MY_IP=`ipconfig getifaddr en0`
 	echo $MY_IP
 }
 

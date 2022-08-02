@@ -1,4 +1,4 @@
-#export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
+#export TERM=xterm-256color
 source ~/dotfiles/shellrc.sh
 
 # Source Prezto.

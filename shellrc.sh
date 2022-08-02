@@ -1,23 +1,23 @@
-export TERM=xterm-256color
-eval `dircolors ~/.dircolors.ansi-dark`
+#export TERM=xterm-256color
+#eval `dircolors ~/.dircolors.ansi-dark`
 #eval `dircolors ~/.dircolors.256dark`
 #eval `dircolors ~/.dircolors.ansi-universal`
-
+export CLICOLOR=1
+export LSCOLORS="hx"
+#export LSCOLORS="Ca"
 # VIM as default
 export EDITOR='vim'
 export SUDO_EDITOR='vim'
 export GIT_EDITOR=vim
 
 # PATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+export PATH=$PATH:/Library/TeX/texbin
+#export PATH=$PATH:/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/bin
+#export PATH=$PATH:/Users/leo/Library/Python/3.8/bin
 # NVM
 #source /usr/share/nvm/init-nvm.sh
-
-# ADB_tools
-if [ -d "$HOME/Documents/dev/lineage/platform-tools" ] ; then
-	export PATH="$HOME/Documents/dev/lineage/platform-tools:$PATH"
-fi
 
 # Aliases
 source ~/dotfiles/aliases
@@ -58,3 +58,4 @@ _gen_fzf_default_opts() {
 }
 # include Z
 . ~/dotfiles/z.sh
+eval "$(pyenv init --path)"
