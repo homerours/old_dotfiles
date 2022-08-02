@@ -84,11 +84,7 @@ nnoremap gv `[v`]
 nnoremap <leader>* :noh<cr>
 
 " sudo write
-nnoremap <leader>ww :w !sudo tee %<cr>
-
-" open, source .vimrc
-nnoremap <leader>ev :tabnew $myvimrc<cr>
-nnoremap <leader>sv :source $myvimrc<cr>
+nnoremap <leader>W :w !sudo tee %<cr>
 
 " yank to the end of the line
 nnoremap Y y$

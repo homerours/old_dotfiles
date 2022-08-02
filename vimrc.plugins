@@ -2,17 +2,10 @@
 call plug#begin('~/.vim/plugged')
 
 " COLORS
-"Plug 'altercation/vim-colors-solarized'
 Plug 'mhartington/oceanic-next'
 
 " NAVIGATE
-"Plug 'scrooloose/nerdtree'
-"Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-let g:fzf_action = {
-  \ 'ctrl-p': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
 
 "" PAIRS, INDENT
 Plug 'tpope/vim-surround'
@@ -30,21 +23,12 @@ else
 	Plug 'maralla/completor.vim'
 endif
 
+""============= LANGUAGE SPECIFIC ==============
+
 " Python
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'dense-analysis/ale'
 Plug 'davidhalter/jedi-vim'
-"" SNIPPETS
-"Plug 'Shougo/neosnippet.vim'
-"Plug 'Shougo/neosnippet-snippets'
-
-"" GIT
-""Plug 'tpope/vim-fugitive'
-""Plug 'airblade/vim-gitgutter' " see git diff +/-
-""Plug 'Xuyuanp/nerdtree-git-plugin' " see git diff in nerdtree
-
-
-""============= LANGUAGE SPECIFIC ==============
 
 "" LATEX
 Plug 'lervag/vimtex'
