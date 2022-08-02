@@ -84,10 +84,7 @@ nnoremap gv `[v`]
 nnoremap <leader>* :noh<cr>
 
 " sudo write
-"nnoremap <leader>w :w !sudo tee %<cr>
-
-" indent file
-"nnoremap <leader>f :normal gg=g''<cr>zz
+nnoremap <leader>ww :w !sudo tee %<cr>
 
 " open, source .vimrc
 nnoremap <leader>ev :tabnew $myvimrc<cr>
@@ -146,5 +143,4 @@ if has('statusline')
 endif
 
 " load plugin config
-
 source ~/dotfiles/vimrc.plugins.config
